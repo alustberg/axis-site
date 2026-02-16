@@ -1230,6 +1230,18 @@ small:has-text("sessions") {
   background: transparent !important;
 }
 </style>
+<style>
+/* ---- FOOTER (MOBILE FIX) ---- */
+@media (max-width: 700px) {
+  footer { padding: 2rem 1.5rem; }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .footer-left, .footer-right { line-height: 1.35; }
+}
+</style>
 </head>
 <body>
 <!-- ======== NAVIGATION ======== -->
