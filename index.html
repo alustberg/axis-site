@@ -3,6 +3,7 @@
 
 
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -174,6 +175,26 @@ nav.scrolled {
 }
 .hero-body p + p {
   margin-top: 1rem;
+}
+.hero-kicker {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.hero-shape {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  max-width: 560px;
+  margin: 0 0 2.5rem;
+}
+.hero-shape .gold {
+  color: var(--gold);
+  font-weight: 600;
 }
 .btn-primary {
   display: inline-block;
@@ -1446,7 +1467,7 @@ small:has-text("sessions") {
 </a>
 <ul class="nav-links">
 <li><a class="active" href="#home">Home</a></li>
-<li><a href="#dimensions">The Work</a></li>
+<li><a href="#dimensions">Diagnostic</a></li>
 <li><a href="#about-alex">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -1467,6 +1488,7 @@ small:has-text("sessions") {
 <!-- ======== FOOTER ======== -->
 <section class="hero" id="home">
 <div class="hero-content">
+<div class="hero-kicker fade-in">A Leadership Diagnostic</div>
 <h1 class="fade-in">
       Lead from your center.<br/>
 <span class="line-2">Without performing leadership.</span>
@@ -1478,7 +1500,8 @@ small:has-text("sessions") {
 <p>Exceptional leadership isn't about becoming someone else. It's about operating consistently from where you are strongest.</p>
 <p>This has never mattered more. As AI accelerates analysis, drafts strategy, and even approximates empathy, what it cannot do is be present — read a room, absorb consequence, ground judgment in the moment.<br><br>Leadership is irreducibly human.<br><br>In the end, people move for people.</p>
 </div>
-<a class="btn-primary fade-in" href="#contact" style="transition-delay: 0.3s">Start the Conversation</a>
+<p class="hero-shape fade-in" style="transition-delay: 0.25s">Leadership has a shape. <span class="gold">The Axis Diamond</span> reveals yours.</p>
+<a class="btn-primary fade-in" href="#contact" style="transition-delay: 0.3s">Talk to Alex</a>
 </div>
 </section><section class="insight" id="insight">
 <div class="section-inner">
