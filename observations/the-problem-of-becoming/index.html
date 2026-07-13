@@ -96,6 +96,10 @@ figure { margin: 2.25rem 0; }
 figure img {
   width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
 }
+figure.capped img {
+  width: auto; max-width: 100%; max-height: 440px; margin: 0 auto; display: block;
+  border-radius: 2px; border: 1px solid var(--beige);
+}
 figure.stacked img { margin-bottom: 0.6rem; }
 figure.stacked img:last-child { margin-bottom: 0; }
 figcaption {
@@ -188,7 +192,7 @@ figcaption {
 <p>A leader who's great at making hard calls quickly — and gets coached on "building more consensus" until every decision takes three meetings and a Slack poll. Nothing broke. The organization just got slower, and nobody connects it to the development plan.</p>
 <p>A leader whose authenticity is her edge — direct, occasionally blunt, deeply trusted because people always know where they stand — who gets feedback to "soften her delivery." She does. Six months later, her team sees her as "more polished" but "harder to read." Same person. Less signal.</p>
 <p>These aren't failures of development. They're successes — pointed in the wrong direction.</p>
-<figure>
+<figure class="capped">
   <img src="/observations/images/problem-of-becoming.png" alt="An abstract diagram titled 'The Problem of Becoming' showing a sphere being pulled away from its center point along an axis." />
 </figure>
 <p>I've spent several posts exploring how leaders drift from center. Drift is real and it's common. But drift is passive. It happens to you. This is different. This is drift with intent. The leader isn't losing their footing — they're rebuilding it, deliberately and effortfully, in a place that was never theirs.</p>

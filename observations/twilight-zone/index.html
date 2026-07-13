@@ -96,6 +96,10 @@ figure { margin: 2.25rem 0; }
 figure img {
   width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
 }
+figure.capped img {
+  width: auto; max-width: 100%; max-height: 440px; margin: 0 auto; display: block;
+  border-radius: 2px; border: 1px solid var(--beige);
+}
 figure.stacked img { margin-bottom: 0.6rem; }
 figure.stacked img:last-child { margin-bottom: 0; }
 figcaption {
@@ -190,7 +194,7 @@ figcaption {
 <p>Media interviews, same thing. I dialed up the gravitas to a setting anyone who knows me would find hilarious. I wasn't failing. I was delivering. And yet — disconnected. From the instincts that got me promoted. From the style my team signed up for. From the version of me that actually worked.</p>
 <p>I second-guessed decisions I'd have made without blinking six months earlier — not because they were wrong, but because they didn't seem like what a CMO would do.</p>
 <p>Something was off. I didn't have a word for it. It took over a decade to find one: centering.</p>
-<figure>
+<figure class="capped">
   <img src="/observations/images/twilight-zone.png" alt="Alex speaking on a conference stage, captioned 'Me in the Twilight Zone.'" />
 </figure>
 <p>Every leader has a center — the place you lead from when you're not thinking about how you're supposed to lead. When I got the title, I didn't lose ability. I lost that. I stopped leading from the place that got me there. My instincts hadn't changed. I'd just stopped trusting them.</p>

@@ -96,6 +96,10 @@ figure { margin: 2.25rem 0; }
 figure img {
   width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
 }
+figure.capped img {
+  width: auto; max-width: 100%; max-height: 440px; margin: 0 auto; display: block;
+  border-radius: 2px; border: 1px solid var(--beige);
+}
 figure.stacked img { margin-bottom: 0.6rem; }
 figure.stacked img:last-child { margin-bottom: 0; }
 figcaption {
@@ -181,7 +185,7 @@ figcaption {
   <div class="article-body">
 <p>The industry is obsessed right now with "Predictive Analytics" and "Behavioral AI." Everyone wants a tool that can tell them whether a leader is "effective." The problem is that most of these diagnostics treat leaders like a set of technical skills to be optimized.</p>
 <p>At Axis Leadership, we think the most useful diagnostic isn't a report card. It's a drift detector.</p>
-<figure>
+<figure class="capped">
   <img src="/observations/images/drift-detector.png" alt="A radar-style diagram titled 'Leading from the Axis: A Drift Detector,' plotting Strategy, Systems, Humanity, and Authenticity around a glowing center, with an arrow showing drift away from center labeled 'success masks drift.'" />
 </figure>
 <p>Here's the difference. Traditional diagnostics tell you you're failing at "Relational Transparency." The Axis Diagnostic shows you you've drifted into a quadrant that isn't yours — because you think that's what the role requires. You're not failing. You're just operating from the wrong place.</p>
