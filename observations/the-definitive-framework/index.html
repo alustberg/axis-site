@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Definitive Framework &mdash; Axis Leadership</title>
+<meta name="description" content="A satirical listicle about AI leadership content that arrives at a serious point: before you can lead through this, you have to know who&#x27;s leading. On coherence, noticing yourself, and why every take starts to feel the same." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGcgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48bGluZSB4MT0iMzIiIHkxPSI2IiB4Mj0iMzIiIHkyPSI1OCIvPjxsaW5lIHgxPSI2IiB5MT0iMzIiIHgyPSI1OCIgeTI9IjMyIi8+PGxpbmUgeDE9IjE4IiB5MT0iMTgiIHgyPSI0NiIgeTI9IjQ2Ii8+PGxpbmUgeDE9IjQ2IiB5MT0iMTgiIHgyPSIxOCIgeTI9IjQ2Ii8+PC9nPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMuMSIgZmlsbD0iI2M5YTg0YyIvPjwvc3ZnPg==" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --brown-foundation: #342a1f; --cream: #f5f0e8; --cream-light: #faf7f2;
+  --beige: #e8dfd2; --tan: #c4ad8f; --tan-dark: #a89070; --brown: #6b5a42;
+  --brown-dark: #4a3d2e; --brown-deepest: #3a2f22; --gold: #c9a84c;
+  --gold-light: #d4b968; --text-primary: #3a2f22; --text-secondary: #6b5a42;
+  --text-light: #a89070; --page-bg: var(--cream);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 68px; }
+body {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-primary);
+  background: var(--page-bg); -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; position: relative;
+}
+body::before {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(196,173,143,0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100; background: var(--page-bg);
+  border-bottom: 1.5px solid var(--beige); transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text-primary); }
+.logo-mark { width: 28px; height: 28px; opacity: 0.85; }
+.logo-text { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 100%; height: 1.5px; background: var(--gold);
+}
+.article-wrap { max-width: 700px; margin: 0 auto; padding: 5.5rem 2.5rem 4.5rem; }
+.article-meta {
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
+}
+.article-meta .separator { display: inline-block; margin: 0 0.6rem; color: var(--tan); }
+h1.article-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.85rem, 3vw, 2.5rem); line-height: 1.2; letter-spacing: -0.015em;
+  color: var(--text-primary); margin-bottom: 1.1rem;
+}
+.article-dek {
+  font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; font-weight: 400;
+  font-size: clamp(1rem, 1.3vw, 1.1rem); line-height: 1.5; color: var(--text-secondary);
+  margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--beige);
+}
+.article-body p {
+  font-size: 0.95rem; line-height: 1.7; color: var(--text-primary); margin-bottom: 1.15rem;
+}
+.article-body h2 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.35rem, 2vw, 1.65rem); line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1.1rem;
+}
+.pull-line {
+  font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; font-size: 1.15rem;
+  line-height: 1.5; color: var(--brown-deepest); border-left: 2px solid var(--gold);
+  padding-left: 1.25rem; margin: 1.75rem 0;
+}
+.article-body ul.axis-list { list-style: none; margin: 1.25rem 0; }
+.article-body ul.axis-list li {
+  font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.9rem; padding-left: 1.1rem;
+  position: relative;
+}
+.article-body ul.axis-list li::before {
+  content: ''; position: absolute; left: 0; top: 0.55em;
+  width: 5px; height: 5px; background: var(--gold); border-radius: 50%;
+}
+.article-body ul.axis-list li strong { color: var(--brown-deepest); font-weight: 700; }
+figure { margin: 2.25rem 0; }
+figure img {
+  width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
+}
+figure.stacked img { margin-bottom: 0.6rem; }
+figure.stacked img:last-child { margin-bottom: 0; }
+figcaption {
+  font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text-light);
+  margin-top: 0.75rem; letter-spacing: 0.01em; text-align: center;
+}
+.article-footer {
+  margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--beige);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+}
+.article-footer a {
+  color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid var(--tan);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+}
+.article-footer a:hover { color: var(--brown-deepest); border-bottom-color: var(--gold); }
+.observation-cta {
+  background: var(--cream-light); border-top: 1px solid var(--beige);
+  border-bottom: 1px solid var(--beige); padding: 3rem 2.5rem; text-align: center;
+}
+.observation-cta-inner { max-width: 580px; margin: 0 auto; }
+.observation-cta h3 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.4;
+}
+.observation-cta p {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-secondary);
+  font-size: 0.98rem; margin-bottom: 1.5rem; line-height: 1.6;
+}
+.observation-cta a.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+  font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--cream-light); background: var(--brown-deepest); text-decoration: none;
+  padding: 0.85rem 1.9rem; border-radius: 2px; transition: background 0.2s;
+}
+.observation-cta a.btn:hover { background: #1a1614; }
+.site-footer {
+  padding: 2.5rem 2.5rem; text-align: center; font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem; color: var(--text-light); letter-spacing: 0.02em;
+}
+.site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.75rem; }
+.site-footer a:hover { color: var(--text-primary); }
+@media (max-width: 1100px) { .article-wrap { padding: 5rem 2rem 4rem; } }
+@media (max-width: 900px) { .nav-inner { padding: 1.1rem 1.75rem; } .nav-links { gap: 1.75rem; } }
+@media (max-width: 700px) {
+  .nav-inner { padding: 1rem 1.25rem; } .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: 0.82rem; } .article-wrap { padding: 4.5rem 1.5rem 3rem; }
+  .article-body p { font-size: 0.92rem; } .pull-line { font-size: 1.05rem; padding-left: 1rem; }
+  .article-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%; }
+  .nav-links a { font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <g stroke="#c9a84c" stroke-width="3.2" stroke-linecap="round">
+          <line x1="32" y1="6" x2="32" y2="58"/><line x1="6" y1="32" x2="58" y2="32"/>
+          <line x1="18" y1="18" x2="46" y2="46"/><line x1="46" y1="18" x2="18" y2="46"/>
+        </g><circle cx="32" cy="32" r="3.1" fill="#c9a84c"/>
+      </svg>
+      <span class="logo-text">Axis Leadership</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#dimensions">Diagnostic</a></li>
+      <li><a href="/observations" class="active">Observations</a></li>
+      <li><a href="/#about-alex">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<article class="article-wrap">
+  <div class="article-meta">Observation<span class="separator">&middot;</span>April 26, 2026</div>
+  <h1 class="article-title">The Definitive Framework</h1>
+  <p class="article-dek">I have seen 2,853 pieces of content this month explaining how AI will reshape leadership. Each one confident. Many incisive. All out of date by the time I double-tap. So here is mine.</p>
+  <div class="article-body">
+<p>I've been scrolling. Checking my likes. And scrolling. And I have seen, by my count, 2,853 pieces of mouth-watering content candy this month explaining how AI will reshape business, work, leadership, cognition, the soul, and brunch. They're numbered. They're diagrammed with certainty. They're aesthetically pleasing. Each one is confident, and many are quite incisive.</p>
+<p>But they all seem to be out of date by the time I double-tap. So here is mine. Sorry, not sorry.</p>
+<h2>The Listicle of Listicles</h2>
+<p><strong>1. The 7 Ways AI Will Transform Leadership (You Will Read 400 of These and Retain None of Them).</strong> I've read them all. I remember almost none of them. Not because they're wrong — but because they operate at a level of generality that doesn't quite attach to anything lived. So we keep producing them, and consuming them: a steady stream of well-formed summaries about a future arriving faster than our ability to metabolize it.</p>
+<p><strong>2. Agentic.</strong> That's the whole item. Just the word. You felt something, didn't you? A little thrill. A little dread. A faint sense that you should probably be doing something agentic right now. Good — the word is working. It does mean something: agents that do tasks, then agents that run processes, then agents talking to other agents, then agents deciding which agents should talk to which agents. At some point the word stops describing a capability and starts describing a world. Nobody knows exactly where that line is. But "agentic" already makes it feel like we're on the inside of it.</p>
+<p><strong>3. The Innovation Moves Faster Than the Sentence Describing It.</strong> I started writing this item on Tuesday. By Thursday, two of the tools I was going to name had been acquired and one had been replaced by something with a lowercase name and a one-word positioning statement. I am now writing about a landscape that no longer exists, for readers in a landscape I cannot see, to be posted into one that hasn't quite formed yet.</p>
+<p><strong>4. Everyone Is an Expert and Nobody Is Home.</strong> The strange thing about this moment isn't that the takes are bad. It's the pace. They come out so fast that there's no room for the person writing them to situate themselves in what they're saying. The argument is strong. The framework lines up. But there's no sense that the writer has sat with the thing, doubted it, changed their mind about any part of it. The takes are everywhere. The people behind them are harder to find.</p>
+<p><strong>5. A Partial List of Questions Nobody Is Asking on the Main Stage.</strong></p>
+<ul class="axis-list">
+  <li>Who am I when I'm not optimizing and accelerating?</li>
+  <li>What do I actually believe about the thing I'm accelerating?</li>
+  <li>Is the version of me building this the version of me I'd want to be led by?</li>
+  <li>If my configuration is off, does it matter how fast I'm moving?</li>
+  <li>What happens to other people if I'm wrong about this?</li>
+  <li>Should this be built at all?</li>
+</ul>
+<p><strong>6. The Dark Part.</strong> Here's what I think about at night — the part that usually gets cut because it doesn't test well. We are in the middle of the largest transformation in the nature of work, thought, and human agency since — pick your comparison, they're all insufficient except maybe the discovery of fire — and we're trying to engage with it using six bullets. Eight takeaways. Three things every CEO must know. We're trying to metabolize a civilizational shift using the rhetorical technology of a BuzzFeed post about cats. The reason is that explaining any of it would require noticing yourself. And noticing yourself is the one thing this moment is structurally designed to prevent.</p>
+<h2>What I Actually Wanted to Say</h2>
+<p>Before you can lead through this, you have to know who's leading. Before you can build the future, you have to notice the person building it. Before you can have a point of view about AI, agents, transformation, disruption, or whatever word you're currently workshopping for your next post — you have to have a point of view about yourself.</p>
+<p>Because producing content has always been a form of leadership. And you can feel when the person behind it isn't quite in it. That's why it all starts to feel the same, even when it isn't.</p>
+<p>The listicle isn't the problem. The listicle is a symptom. The problem is that we've agreed, collectively and without discussing it, to skip the step where we ask who we are before we ask what we should do.</p>
+<p>That step is the whole job. That step is the only job.</p>
+<figure>
+  <img src="../images/definitive-framework.png" alt="A satirical 4-quadrant framework titled 'The Definitive Framework, for understanding why no framework will save you,' plotting depth of conviction against how fast you are moving." />
+  <figcaption>Behold the schemagram. I told you I wouldn't. I did.</figcaption>
+</figure>
+<p class="pull-line">If you made it this far, you're either working from home or just relieved to find a person as confused as you are. I'm still here. Are you?</p>
+  </div>
+  <div class="article-footer">
+    <a href="/observations">&larr; All observations</a>
+    <a href="/#contact">Talk to Alex &rarr;</a>
+  </div>
+</article>
+<section class="observation-cta">
+  <div class="observation-cta-inner">
+    <h3>Curious where your own center is?</h3>
+    <p>The Axis Diamond is a diagnostic conversation about how you access &mdash; or don't access &mdash; your full leadership capacity.</p>
+    <a href="/#contact" class="btn">Talk to Alex</a>
+  </div>
+</section>
+<footer class="site-footer">
+  <a href="/">Home</a>&middot;<a href="/observations">Observations</a>&middot;<a href="/#contact">Contact</a>
+  <div style="margin-top: 1rem;">&copy; Axis Leadership</div>
+</footer>
+<script>
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('nav');
+    if (window.scrollY > 20) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+  });
+</script>
+</body>
+</html>

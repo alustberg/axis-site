@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Axis = Access — Axis Leadership</title>
+<meta name="description" content="In a world where intelligence is abundant, leadership effectiveness shifts away from pure capability and toward something else." />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGcgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48bGluZSB4MT0iMzIiIHkxPSI2IiB4Mj0iMzIiIHkyPSI1OCIvPjxsaW5lIHgxPSI2IiB5MT0iMzIiIHgyPSI1OCIgeTI9IjMyIi8+PGxpbmUgeDE9IjE4IiB5MT0iMTgiIHgyPSI0NiIgeTI9IjQ2Ii8+PGxpbmUgeDE9IjQ2IiB5MT0iMTgiIHgyPSIxOCIgeTI9IjQ2Ii8+PC9nPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMuMSIgZmlsbD0iI2M5YTg0YyIvPjwvc3ZnPg==" />
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --brown-foundation: #342a1f;
+  --cream: #f5f0e8;
+  --cream-light: #faf7f2;
+  --beige: #e8dfd2;
+  --tan: #c4ad8f;
+  --tan-dark: #a89070;
+  --brown: #6b5a42;
+  --brown-dark: #4a3d2e;
+  --brown-deepest: #3a2f22;
+  --gold: #c9a84c;
+  --gold-light: #d4b968;
+  --text-primary: #3a2f22;
+  --text-secondary: #6b5a42;
+  --text-light: #a89070;
+  --page-bg: var(--cream);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  scroll-padding-top: 68px;
+}
+
+body {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  color: var(--text-primary);
+  background: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201, 168, 76, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(196, 173, 143, 0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* ---- NAVIGATION ---- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: var(--page-bg);
+  border-bottom: 1.5px solid var(--beige);
+  transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(58, 47, 34, 0.06); }
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text-primary); }
+.logo-mark { width: 28px; height: 28px; opacity: 0.85; }
+.logo-text { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 100%; height: 1.5px; background: var(--gold);
+}
+
+/* ---- ARTICLE LAYOUT (tightened for long-form reading) ---- */
+.article-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 5.5rem 2.5rem 4.5rem;
+}
+
+.article-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.article-meta .separator { display: inline-block; margin: 0 0.6rem; color: var(--tan); }
+
+/* Article title — trimmed further now that spacing is tighter */
+h1.article-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 1.1rem;
+}
+
+.article-dek {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--beige);
+}
+
+/* Body prose — tightened rhythm for long-form */
+.article-body p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 1.15rem;
+}
+
+.article-body h2 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.pull-line {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--brown-deepest);
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+figure { margin: 2.25rem 0; }
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid var(--beige);
+}
+figcaption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.article-footer {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--beige);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+}
+.article-footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--tan);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.article-footer a:hover { color: var(--brown-deepest); border-bottom-color: var(--gold); }
+
+.observation-cta {
+  background: var(--cream-light);
+  border-top: 1px solid var(--beige);
+  border-bottom: 1px solid var(--beige);
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+.observation-cta-inner { max-width: 580px; margin: 0 auto; }
+.observation-cta h3 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+.observation-cta p {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.observation-cta a.btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-light);
+  background: var(--brown-deepest);
+  text-decoration: none;
+  padding: 0.85rem 1.9rem;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.observation-cta a.btn:hover { background: #1a1614; }
+
+.site-footer {
+  padding: 2.5rem 2.5rem;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+}
+.site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.75rem; }
+.site-footer a:hover { color: var(--text-primary); }
+
+@media (max-width: 1100px) { .article-wrap { padding: 5rem 2rem 4rem; } }
+@media (max-width: 900px) {
+  .nav-inner { padding: 1.1rem 1.75rem; }
+  .nav-links { gap: 1.75rem; }
+}
+@media (max-width: 700px) {
+  .nav-inner { padding: 1rem 1.25rem; }
+  .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: 0.82rem; }
+  .article-wrap { padding: 4.5rem 1.5rem 3rem; }
+  .article-body p { font-size: 0.92rem; }
+  .pull-line { font-size: 1.05rem; padding-left: 1rem; }
+  .article-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%; }
+  .nav-links a { font-size: 0.78rem; }
+}
+</style>
+</head>
+
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <g stroke="#c9a84c" stroke-width="3.2" stroke-linecap="round">
+          <line x1="32" y1="6" x2="32" y2="58"/>
+          <line x1="6" y1="32" x2="58" y2="32"/>
+          <line x1="18" y1="18" x2="46" y2="46"/>
+          <line x1="46" y1="18" x2="18" y2="46"/>
+        </g>
+        <circle cx="32" cy="32" r="3.1" fill="#c9a84c"/>
+      </svg>
+      <span class="logo-text">Axis Leadership</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#dimensions">Diagnostic</a></li>
+      <li><a href="/observations" class="active">Observations</a></li>
+      <li><a href="/#about-alex">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="article-wrap">
+
+  <div class="article-meta">Observation<span class="separator">·</span>March 11, 2026</div>
+
+  <h1 class="article-title">Axis = Access</h1>
+
+  <p class="article-dek">In a world where intelligence is abundant, leadership effectiveness shifts away from pure capability and toward something else.</p>
+
+  <div class="article-body">
+
+    <p>Most leadership thinking starts from the same premise: effectiveness is a function of ability. The assumption is that if leaders accumulate enough knowledge, skills, and tools, effectiveness follows.</p>
+
+    <p>This logic made sense when information and analysis were scarce. Leaders were often limited by what they could know, calculate, or structure.</p>
+
+    <p>That equation has changed. The amount of "ability" available to leaders has exploded. Analysis, research, summaries, and recommendations are increasingly available on demand. The tools that once separated strong operators from average ones are becoming widely accessible.</p>
+
+    <p>That creates a different constraint.</p>
+
+    <figure>
+      <img src="../images/cognitive-divide.png" alt="The Cognitive Divide: a chart showing the growing gap between available information and human processing capacity from 1980 to the present, with a peak decision quality curve indicating an information overload zone." />
+      <figcaption>The Cognitive Divide — the widening gap between what's available and what a human can meaningfully process.</figcaption>
+    </figure>
+
+    <p>Machines can produce answers and generate options. They cannot decide which ones matter. They cannot supply conviction.</p>
+
+    <p>Which means leadership effectiveness shifts away from pure capability and toward something else: access.</p>
+
+    <h2>Axis = Access</h2>
+
+    <p>In the Axis work, we identify the point where a leader can consistently access the four dimensions of leadership — Strategy, Systems, Humanity, and Authenticity — and move between them fluidly as the situation requires. That center is where human judgment and conviction come from. Everything else is input.</p>
+
+    <p>When leaders operate close to that center, decisions clarify. Trade-offs become easier to see. People understand the direction.</p>
+
+    <p>When leaders drift away from it, the typical response is to compensate with more capability: more analysis, more process, more activity. When those things are instantly available, the loop tightens. Leaders don't run out of answers — they drown in them.</p>
+
+    <p>That approach can work for a while, but it becomes harder to sustain as the environment gets faster and noisier.</p>
+
+    <p>In a world where intelligence is abundant, the advantage shifts to leaders who can reliably access their full capacity.</p>
+
+    <p class="pull-line">AI can make a leader faster. It can't make them whole.</p>
+
+    <p>AI didn't raise the bar. It made the bar irrelevant.</p>
+
+    <p>The ones who know where they stand will be fine. The rest will just have better tools for going in circles.</p>
+
+  </div>
+
+  <div class="article-footer">
+    <a href="/observations">← All observations</a>
+    <a href="/#contact">Talk to Alex →</a>
+  </div>
+
+</article>
+
+<section class="observation-cta">
+  <div class="observation-cta-inner">
+    <h3>Curious where your own center is?</h3>
+    <p>The Axis Diamond is a diagnostic conversation about how you access — or don't access — your full leadership capacity.</p>
+    <a href="/#contact" class="btn">Talk to Alex</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="/">Home</a>·<a href="/observations">Observations</a>·<a href="/#contact">Contact</a>
+  <div style="margin-top: 1rem;">© Axis Leadership</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('nav');
+    if (window.scrollY > 20) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+  });
+</script>
+
+</body>
+</html>
