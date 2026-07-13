@@ -65,9 +65,12 @@ nav.scrolled { box-shadow:0 2px 20px rgba(58,47,34,0.06); }
 }
 .filter-tabs {
   display:none; max-width:880px; margin:2rem auto 0; padding:0 2.5rem;
-  flex-wrap:wrap; justify-content:center; gap:0.75rem;
+  flex-direction:column; align-items:center; gap:0.75rem;
 }
 .filter-tabs.active { display:flex; }
+.filter-tabs-row {
+  display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem;
+}
 .filter-tab {
   font-family:'DM Sans',sans-serif; font-size:0.82rem; font-weight:500; letter-spacing:0.04em;
   color:var(--text-secondary); background:transparent; border:1px solid var(--tan);
@@ -151,12 +154,16 @@ nav.scrolled { box-shadow:0 2px 20px rgba(58,47,34,0.06); }
   <p class="page-lede">Where leadership meets the moment. Real stories, working frameworks, and provocations on how leaders lose themselves &mdash; and find their way back.</p>
 </header>
 <div class="filter-tabs active" id="filterTabs">
-  <button class="filter-tab selected" data-filter="all">All</button>
-  <button class="filter-tab" data-filter="leadership-practice">Leadership Practice</button>
-  <button class="filter-tab" data-filter="axis-diamond">The Axis Diamond</button>
-  <button class="filter-tab" data-filter="ai-human-center">AI &amp; the Human Center</button>
-  <button class="filter-tab" data-filter="coherence-character">Coherence &amp; Character</button>
-  <button class="filter-tab" data-filter="business-environment">The Business Environment</button>
+  <div class="filter-tabs-row">
+    <button class="filter-tab selected" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="leadership-practice">Leadership Practice</button>
+    <button class="filter-tab" data-filter="axis-diamond">The Axis Diamond</button>
+  </div>
+  <div class="filter-tabs-row">
+    <button class="filter-tab" data-filter="ai-human-center">AI &amp; the Human Center</button>
+    <button class="filter-tab" data-filter="coherence-character">Coherence &amp; Character</button>
+    <button class="filter-tab" data-filter="business-environment">The Business Environment</button>
+  </div>
 </div>
 <main class="observations-list" id="observationsList">
   <a class="observation-entry" href="/observations/the-yes-that-cost-two-years" data-tags="leadership-practice,coherence-character">
