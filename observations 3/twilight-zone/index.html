@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Twilight Zone of Leadership &mdash; Axis Leadership</title>
+<meta name="description" content="Years ago I was promoted to CMO and started performing leadership instead of doing it. A story about displacement, and the decade it took to find the word for it." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGcgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48bGluZSB4MT0iMzIiIHkxPSI2IiB4Mj0iMzIiIHkyPSI1OCIvPjxsaW5lIHgxPSI2IiB5MT0iMzIiIHgyPSI1OCIgeTI9IjMyIi8+PGxpbmUgeDE9IjE4IiB5MT0iMTgiIHgyPSI0NiIgeTI9IjQ2Ii8+PGxpbmUgeDE9IjQ2IiB5MT0iMTgiIHgyPSIxOCIgeTI9IjQ2Ii8+PC9nPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMuMSIgZmlsbD0iI2M5YTg0YyIvPjwvc3ZnPg==" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --brown-foundation: #342a1f; --cream: #f5f0e8; --cream-light: #faf7f2;
+  --beige: #e8dfd2; --tan: #c4ad8f; --tan-dark: #a89070; --brown: #6b5a42;
+  --brown-dark: #4a3d2e; --brown-deepest: #3a2f22; --gold: #c9a84c;
+  --gold-light: #d4b968; --text-primary: #3a2f22; --text-secondary: #6b5a42;
+  --text-light: #a89070; --page-bg: var(--cream);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 68px; }
+body {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-primary);
+  background: var(--page-bg); -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; position: relative;
+}
+body::before {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(196,173,143,0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100; background: var(--page-bg);
+  border-bottom: 1.5px solid var(--beige); transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text-primary); }
+.logo-mark { width: 28px; height: 28px; opacity: 0.85; }
+.logo-text { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 100%; height: 1.5px; background: var(--gold);
+}
+.article-wrap { max-width: 700px; margin: 0 auto; padding: 5.5rem 2.5rem 4.5rem; }
+.article-meta {
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
+}
+.article-meta .separator { display: inline-block; margin: 0 0.6rem; color: var(--tan); }
+h1.article-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.85rem, 3vw, 2.5rem); line-height: 1.2; letter-spacing: -0.015em;
+  color: var(--text-primary); margin-bottom: 1.1rem;
+}
+.article-dek {
+  font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; font-weight: 400;
+  font-size: clamp(1rem, 1.3vw, 1.1rem); line-height: 1.5; color: var(--text-secondary);
+  margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--beige);
+}
+.article-body p {
+  font-size: 0.95rem; line-height: 1.7; color: var(--text-primary); margin-bottom: 1.15rem;
+}
+.article-body h2 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.35rem, 2vw, 1.65rem); line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1.1rem;
+}
+.pull-line {
+  font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; font-size: 1.15rem;
+  line-height: 1.5; color: var(--brown-deepest); border-left: 2px solid var(--gold);
+  padding-left: 1.25rem; margin: 1.75rem 0;
+}
+.article-body ul.axis-list { list-style: none; margin: 1.25rem 0; }
+.article-body ul.axis-list li {
+  font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.9rem; padding-left: 1.1rem;
+  position: relative;
+}
+.article-body ul.axis-list li::before {
+  content: ''; position: absolute; left: 0; top: 0.55em;
+  width: 5px; height: 5px; background: var(--gold); border-radius: 50%;
+}
+.article-body ul.axis-list li strong { color: var(--brown-deepest); font-weight: 700; }
+figure { margin: 2.25rem 0; }
+figure img {
+  width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
+}
+figure.stacked img { margin-bottom: 0.6rem; }
+figure.stacked img:last-child { margin-bottom: 0; }
+figcaption {
+  font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text-light);
+  margin-top: 0.75rem; letter-spacing: 0.01em; text-align: center;
+}
+.article-footer {
+  margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--beige);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+}
+.article-footer a {
+  color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid var(--tan);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+}
+.article-footer a:hover { color: var(--brown-deepest); border-bottom-color: var(--gold); }
+.observation-cta {
+  background: var(--cream-light); border-top: 1px solid var(--beige);
+  border-bottom: 1px solid var(--beige); padding: 3rem 2.5rem; text-align: center;
+}
+.observation-cta-inner { max-width: 580px; margin: 0 auto; }
+.observation-cta h3 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.4;
+}
+.observation-cta p {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-secondary);
+  font-size: 0.98rem; margin-bottom: 1.5rem; line-height: 1.6;
+}
+.observation-cta a.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+  font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--cream-light); background: var(--brown-deepest); text-decoration: none;
+  padding: 0.85rem 1.9rem; border-radius: 2px; transition: background 0.2s;
+}
+.observation-cta a.btn:hover { background: #1a1614; }
+.site-footer {
+  padding: 2.5rem 2.5rem; text-align: center; font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem; color: var(--text-light); letter-spacing: 0.02em;
+}
+.site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.75rem; }
+.site-footer a:hover { color: var(--text-primary); }
+@media (max-width: 1100px) { .article-wrap { padding: 5rem 2rem 4rem; } }
+@media (max-width: 900px) { .nav-inner { padding: 1.1rem 1.75rem; } .nav-links { gap: 1.75rem; } }
+@media (max-width: 700px) {
+  .nav-inner { padding: 1rem 1.25rem; } .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: 0.82rem; } .article-wrap { padding: 4.5rem 1.5rem 3rem; }
+  .article-body p { font-size: 0.92rem; } .pull-line { font-size: 1.05rem; padding-left: 1rem; }
+  .article-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%; }
+  .nav-links a { font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <g stroke="#c9a84c" stroke-width="3.2" stroke-linecap="round">
+          <line x1="32" y1="6" x2="32" y2="58"/><line x1="6" y1="32" x2="58" y2="32"/>
+          <line x1="18" y1="18" x2="46" y2="46"/><line x1="46" y1="18" x2="18" y2="46"/>
+        </g><circle cx="32" cy="32" r="3.1" fill="#c9a84c"/>
+      </svg>
+      <span class="logo-text">Axis Leadership</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#dimensions">Diagnostic</a></li>
+      <li><a href="/observations" class="active">Observations</a></li>
+      <li><a href="/#about-alex">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<article class="article-wrap">
+  <div class="article-meta">Observation<span class="separator">&middot;</span>April 2, 2026</div>
+  <h1 class="article-title">The Twilight Zone of Leadership</h1>
+  <p class="article-dek">You're saying the right things, but they don't sound like you. Everything looks normal from the outside — and from the inside, the walls are slightly off.</p>
+  <div class="article-body">
+<p>Years ago, I was promoted to CMO of a publicly traded company. My name got filed with the SEC. I had business cards with a C on them. Very official.</p>
+<p>The job didn't actually change that much. But I did.</p>
+<p>Same team. Same CEO asking the same hard questions. But somewhere between the press release and updating my LinkedIn, I started performing. Not performing as in doing well. Performing as in acting.</p>
+<p>And not badly, either. That's the trap. Results were solid. Reviews were good. But something had shifted. It was the twilight zone of leadership.</p>
+<p>Everything looks normal from the outside. From the inside, the walls are slightly off. The light's wrong. You're saying the right things, but they don't sound like you.</p>
+<p>When my CEO pushed on marketing results — something he'd done plenty of times before — I didn't answer the same way. Before, I'd take it head-on. Now I hedged, wrapping straightforward answers in strategic-sounding padding. Some part of me had decided: a CMO doesn't just answer a question. He navigates it.</p>
+<p>The conference stage is where it really showed up. I used to be a confident speaker. Not polished — just real. I could connect with a room like I'd connect with someone over coffee. Then I got stage fright. Actual stage fright. Heart racing, palms sweating, dreading the podium — at conferences I'd done a dozen times. This had never happened to me.</p>
+<p>I dressed differently. Not better — just more "executive." I spoke more formally. Less me. Trying to sound like what a CMO should sound like. The result: less engaging, less natural, less connected. The thing I was best at — being real with people — was the first thing I gave up.</p>
+<p>Media interviews, same thing. I dialed up the gravitas to a setting anyone who knows me would find hilarious. I wasn't failing. I was delivering. And yet — disconnected. From the instincts that got me promoted. From the style my team signed up for. From the version of me that actually worked.</p>
+<p>I second-guessed decisions I'd have made without blinking six months earlier — not because they were wrong, but because they didn't seem like what a CMO would do.</p>
+<p>Something was off. I didn't have a word for it. It took over a decade to find one: centering.</p>
+<figure>
+  <img src="../images/twilight-zone.png" alt="Alex speaking on a conference stage, captioned 'Me in the Twilight Zone.'" />
+</figure>
+<p>Every leader has a center — the place you lead from when you're not thinking about how you're supposed to lead. When I got the title, I didn't lose ability. I lost that. I stopped leading from the place that got me there. My instincts hadn't changed. I'd just stopped trusting them.</p>
+<p>That's the trap. Not incompetence. Not decline. Displacement.</p>
+<p>You move away from your center because you think the role demands it — or because of politics, pressure, or what's happening at home. And because you're good enough to pull it off, nobody tells you. But you know something's off. And people feel it.</p>
+<p>That gap — between how you naturally lead and what's actually showing up — is the twilight zone.</p>
+<p class="pull-line">Are you performing?</p>
+  </div>
+  <div class="article-footer">
+    <a href="/observations">&larr; All observations</a>
+    <a href="/#contact">Talk to Alex &rarr;</a>
+  </div>
+</article>
+<section class="observation-cta">
+  <div class="observation-cta-inner">
+    <h3>Curious where your own center is?</h3>
+    <p>The Axis Diamond is a diagnostic conversation about how you access &mdash; or don't access &mdash; your full leadership capacity.</p>
+    <a href="/#contact" class="btn">Talk to Alex</a>
+  </div>
+</section>
+<footer class="site-footer">
+  <a href="/">Home</a>&middot;<a href="/observations">Observations</a>&middot;<a href="/#contact">Contact</a>
+  <div style="margin-top: 1rem;">&copy; Axis Leadership</div>
+</footer>
+<script>
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('nav');
+    if (window.scrollY > 20) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+  });
+</script>
+</body>
+</html>
