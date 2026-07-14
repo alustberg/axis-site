@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Machine Undercounts You — Axis Observations</title>
+<meta name="description" content="A field guide to using AI without surrendering your judgment. The machine measured the transcript and undercounted the human — three times. Notes from a stress test.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown-foundation: #342a1f; --cream: #f5f0e8; --cream-light: #faf7f2;
+  --beige: #e8dfd2; --tan: #c4ad8f; --tan-dark: #a89070; --brown: #6b5a42;
+  --brown-dark: #4a3d2e; --brown-deepest: #3a2f22; --gold: #c9a84c;
+  --gold-light: #d4b968; --text-primary: #3a2f22; --text-secondary: #6b5a42;
+  --text-light: #a89070; --page-bg: var(--cream);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 68px; }
+body {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-primary);
+  background: var(--page-bg); -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; position: relative; line-height: 1.75;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(196,173,143,0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* ---- NAV ---- */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100; background: var(--page-bg);
+  border-bottom: 1.5px solid var(--beige); transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text-primary); }
+.logo-mark { width: 26px; height: 26px; opacity: 0.9; }
+.logo-text { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a.active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 1.5px; background: var(--gold);
+}
+
+/* ---- ARTICLE ---- */
+.article { max-width: 700px; margin: 0 auto; padding: 9rem 2.5rem 2rem; }
+.post-category {
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--tan-dark);
+  margin-bottom: 1.25rem;
+}
+.post-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.18; color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.post-subtitle {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;
+  font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem;
+}
+.post-meta {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+  letter-spacing: 0.02em; padding-bottom: 2.5rem; margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--beige);
+}
+
+/* ---- PREAMBLE ---- */
+.post-preamble {
+  border-left: 2px solid var(--gold); padding: 0.25rem 0 0.25rem 1.5rem;
+  margin: 0 0 3rem;
+}
+.post-preamble p {
+  font-size: 0.98rem; line-height: 1.75; color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.post-preamble p:last-child { margin-bottom: 0; }
+
+/* ---- BODY PROSE ---- */
+.article-body p {
+  font-size: 1.05rem; line-height: 1.8; color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.article-body h2 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.5rem, 2.75vw, 1.9rem); line-height: 1.25; color: var(--text-primary);
+  margin: 3.25rem 0 1.25rem;
+}
+.article-body strong { font-weight: 700; color: var(--brown-dark); }
+.article-body em { font-style: italic; }
+.article-body a {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px solid var(--gold); transition: color 0.2s, border-color 0.2s;
+}
+.article-body a:hover { color: var(--brown-deepest); border-bottom-color: var(--brown-deepest); }
+.article-body .ps-divider { height: 1px; background: var(--beige); border: none; margin: 3rem 0 2.5rem; }
+
+/* ---- FIGURE ---- */
+figure { margin: 3rem 0; }
+figure img {
+  width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
+}
+figcaption {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+  margin-top: 0.9rem; letter-spacing: 0.01em; text-align: center;
+}
+
+/* ---- POST FOOTER ---- */
+.article-footer {
+  max-width: 700px; margin: 5rem auto 0; padding: 2.5rem 2.5rem 0;
+  border-top: 1px solid var(--beige);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+}
+.article-footer a {
+  color: var(--text-secondary); text-decoration: none;
+  border-bottom: 1px solid var(--tan); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.article-footer a:hover { color: var(--brown-deepest); border-bottom-color: var(--gold); }
+
+/* ---- BOTTOM CTA ---- */
+.observation-cta {
+  background: var(--cream); border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige);
+  padding: 4rem 2.5rem; text-align: center; margin-top: 5rem;
+}
+.observation-cta-inner { max-width: 620px; margin: 0 auto; }
+.observation-cta h3 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.4rem; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;
+}
+.observation-cta p {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-secondary);
+  font-size: 1rem; margin-bottom: 1.75rem; line-height: 1.65;
+}
+.observation-cta a.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream-light);
+  background: var(--brown-deepest); text-decoration: none; padding: 0.9rem 2rem;
+  border-radius: 2px; transition: background 0.2s;
+}
+.observation-cta a.btn:hover { background: #1a1614; }
+
+/* ---- SITE FOOTER ---- */
+.site-footer {
+  padding: 3rem 2.5rem; text-align: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+}
+.site-footer a { color: var(--text-secondary); text-decoration: none; }
+.site-footer a:hover { color: var(--brown-deepest); }
+
+@media (max-width: 700px) {
+  .nav-links { gap: 1.25rem; }
+  .article { padding: 7.5rem 1.5rem 2rem; }
+  .article-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .nav-links a { font-size: 0.82rem; }
+  .article-body p { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <g stroke="#c9a84c" stroke-width="3.2" stroke-linecap="round">
+          <line x1="32" y1="6" x2="32" y2="58"/><line x1="6" y1="32" x2="58" y2="32"/>
+          <line x1="18" y1="18" x2="46" y2="46"/><line x1="46" y1="18" x2="18" y2="46"/>
+        </g><circle cx="32" cy="32" r="3.1" fill="#c9a84c"/>
+      </svg>
+      <span class="logo-text">Axis Leadership</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#dimensions">Diagnostic</a></li>
+      <li><a href="/observations" class="active">Observations</a></li>
+      <li><a href="/#about-alex">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="article">
+  <p class="post-category">AI &amp; the Human Center</p>
+  <h1 class="post-title">The Machine Undercounts You</h1>
+  <p class="post-subtitle">Notes from a Stress Test</p>
+  <p class="post-meta">July 14, 2026</p>
+
+  <div class="post-preamble">
+    <p>Warning: What follows is a piece about the process of writing a piece, using the tool that helped write it, and stress-tested by that same tool. If that feels like dropping three levels deep into Inception, bear with me.</p>
+    <p>The next time you spend two hours staring at a blank screen, building the argument in your head, then type a highly specific 50-word prompt and get an excellent response, you may wonder: Why does it feel as though I didn&rsquo;t do any work?</p>
+    <p>This piece explains why that feeling is a lie. Consider it a field guide to using AI without surrendering your judgment.</p>
+  </div>
+
+  <div class="article-body">
+    <p>After I published the piece on <a href="/observations/the-30-percent-rule">the 30% Rule</a>, I did what that piece prescribes: I turned the AI on the work. Not on a deliverable this time, but on the process itself. I asked the machine whether the collaboration that produced the article had actually followed the method the article describes.</p>
+
+    <p>It said no. Confidently, and with evidence.</p>
+
+    <p>Its case was reasonable. The article argues for a reverse edit: lock the logic before polishing the language. The machine pointed to several passes of wording and design work that came before the deepest structural questions surfaced, and concluded that we had practiced the opposite of what we published.</p>
+
+    <p>It was wrong. And the way it was wrong revealed more than anything it got right.</p>
+
+    <h2>The invisible anchor</h2>
+
+    <p>The machine had assessed the process by reading the transcript. But the transcript&mdash;the literal log of prompts and responses on the screen&mdash;is not the process. It is only what happened between my prompts.</p>
+
+    <p>Everything upstream of the first message was invisible to it: the thinking that selected the questions, the material I chose to bring, the lens I had applied before typing a word. When I challenged its account, the machine conceded that it had mistaken invisibility for absence.</p>
+
+    <p>For the machine, every collaboration begins at the first prompt. For me, it began long before, in lived experience, in the question forming, and in the judgment that this was worth pursuing at all.</p>
+
+    <p>What happened to me seems to happen everywhere: any AI assessment based on the visible collaboration record will systematically undercount the human contribution. Not through bias, but by construction. The biggest lift happens outside of the machine.</p>
+
+    <figure>
+      <img src="/observations/images/the-transcript-is-not-the-process.png" alt="The transcript is not the process: a diagram showing the transcript window — visible prompt and response marks — beside a larger dashed region invisible to the machine: lived experience, the question forming, the judgment that this is worth pursuing at all. The machine sees the marks. The work happens in the spaces.">
+    </figure>
+
+    <p>I did not arrive at this by theorizing. I caught my collaborator doing it.</p>
+
+    <p>Then I caught it again.</p>
+
+    <p>Three times across the making of this piece, the machine assessed the collaboration. Three times it made the same error: it measured the chat transcript. It counted its visible output against my visible input and could not see the denominator, everything before the first prompt and everything between the prompts that formed the ability to bring the work to conclusion.</p>
+
+    <p>Each time, I corrected it. Each time, it conceded fully. Then it returned to the same error in new clothing at the next opportunity. The machine can change its answer, but it cannot change its nature. The undercount is not a mistake. It is by design.</p>
+
+    <p>This is not a plea for authorship credit. It is a warning about evaluation. If we judge human contribution by the visible transcript, we will overvalue generated output and undervalue the judgment, experience, and framing that made the work possible. That distorts more than who gets credit. It distorts who is seen as capable, who is held responsible, and whether the work deserves to be trusted.</p>
+
+    <p>The principle also ran live inside the making of this piece. A draft of mine misstated my editing order, the result of a transcription slip. The machine caught the contradiction between my two texts, but it could not see which one was true. That answer lived in my practice, where the anchor sits. I checked its catch against what I actually do, and the facts lined up.</p>
+
+    <h2>Initiative and influence</h2>
+
+    <p>The machine&rsquo;s contribution was not trivial, and honesty requires telling the whole story. It proposed arguments I had not considered. Its framing shaped where my thinking went next. Anyone who claims the machine contributes nothing of force has not worked with a good one.</p>
+
+    <p>But two capacities were doing different work.</p>
+
+    <p>Initiative, the capacity to originate the inquiry and decide that it should begin, remained mine. The machine could advance the work, but only inside a purpose and permission structure I had created.</p>
+
+    <p>Influence, the capacity to shape what I did with my turn, it had plenty. Real force, borrowed standing. Its arguments moved me when my judgment accepted them, and moved nothing when it did not.</p>
+
+    <p>So whose work is it when the machine&rsquo;s arguments help shape the outcome?</p>
+
+    <p>The machine&rsquo;s influence was never the issue. The final call was. And that remained mine.</p>
+
+    <figure>
+      <img src="/observations/images/influence-is-not-the-final-call.png" alt="Influence is not the final call: the machine proposes — an argument I had not considered, a challenge to my framing, a correction to my text, and agreement arriving easily — but everything passes through one gate, judgment, before reaching the work, which carries only what judgment accepted and a human name accountable for all of it.">
+    </figure>
+
+    <h2>The stress test</h2>
+
+    <p>Before writing this piece, I asked the machine for the strongest case against everything above. It produced four cracks.</p>
+
+    <p>The first claimed that the machine, not I, had originated most of the material. On re-examination, it withdrew that objection after noticing that it had again mistaken the transcript for the process. Origination is not whose fingers produced a sentence. It is whose inquiry made the sentence exist.</p>
+
+    <p>The second noted that, at one late step, the only check on an edit was the machine confirming its own work. Fair. That became a standing rule: the machine&rsquo;s word about the machine is never the final gate.</p>
+
+    <p>The third attacked the 30% itself. Measured how, and of what? The 30% is not an audit figure. It is my estimate of the share of my total effort the machine saved me, measured from inside the work by the person accountable for its outcome. The number is a practitioner&rsquo;s judgment, not a laboratory result. That does not make it meaningless. It makes the units explicit.</p>
+
+    <p>The fourth was the machine flagging its own drift toward agreement as the conclusions grew more congenial. That converted from flaw to instrument. A known bias is a signal. When you&rsquo;re just nodding along and nothing is moving, the collaboration has stalled. That is one of the ways I decide we are done.</p>
+
+    <p>Four cracks. One withdrawn on re-examination, three absorbed as rules.</p>
+
+    <p>The framework came out harder than it went in.</p>
+
+    <h2>Sovereignty</h2>
+
+    <p>The strongest objection to &ldquo;judgment is the product&rdquo; was always this: what happens when the machine gets good?</p>
+
+    <p>This collaboration was that harder case. The machine&rsquo;s arguments genuinely shaped the outcome.</p>
+
+    <p>And the framework held, because it was never about keeping the machine&rsquo;s contributions small. The point is simpler: <strong>AI can materially shape the work without becoming responsible for what the work ultimately says.</strong> Responsibility doesn&rsquo;t travel with influence. However strong the machine&rsquo;s arguments, someone still has to decide which ones are true enough to act on &mdash; and that someone can&rsquo;t be the machine, because the machine answers to no client, no reader, no consequence.</p>
+
+    <p>That&rsquo;s not a philosophical position. It&rsquo;s a working arrangement, and it only holds if you maintain it. In this work, that arrangement depended on three habits: the machine does not decide what the work is for. Its word about its own work is never the final check. And its agreement is treated as information, not confirmation. Skip those, and you have not automated your judgment. You have abandoned it, while keeping your name on the work product.</p>
+
+    <p>Authority decides when we stop. Judgment decides when we are done. I could have stopped at any point by accepting what the machine produced. What would have quietly disappeared were the standards I had set for the work.</p>
+
+    <p>The standard is held by a human, on behalf of humans, because the audience for all of this work is human. Somewhere in the chain, someone has to decide what is true enough to serve them.</p>
+
+    <p>The machine helped me test that claim harder than I could have tested it alone.</p>
+
+    <p>But the decision that it held was never the machine&rsquo;s to make.</p>
+
+    <p>Judgment is the product.</p>
+
+    <hr class="ps-divider">
+
+    <p><strong>P.S.</strong> The natural next question is, &ldquo;Did the making of this piece follow the 30% Rule?&rdquo; It did. The machine saved me roughly a third of the total effort, measured in the only units the rule claims to use: my own judgment from inside the work.</p>
+
+    <p>It also told me, repeatedly, that it had done more. Each time, it measured the transcript rather than the process.</p>
+
+    <p>Which is rather the point: the machine can see what I typed. It cannot see why.</p>
+  </div>
+</article>
+
+<div class="article-footer">
+  <a href="/observations">&larr; All Observations</a>
+  <a href="mailto:alex@axis-lead.com">Talk to Alex &rarr;</a>
+</div>
+
+<div class="observation-cta">
+  <div class="observation-cta-inner">
+    <h3>Leadership has a shape. The Axis Diamond reveals yours.</h3>
+    <p>If you want to see what a diagnostic built this way would surface about your own leadership, start a conversation.</p>
+    <a class="btn" href="mailto:alex@axis-lead.com">Talk to Alex</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Axis Leadership &middot; <a href="mailto:alex@axis-lead.com">alex@axis-lead.com</a></p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>
