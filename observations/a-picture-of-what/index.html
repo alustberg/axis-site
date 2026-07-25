@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Picture of What? — Axis Observations</title>
+<meta name="description" content="A 360 averages everyone's perception of the current version of a person and hands that back as the person. Worth knowing what picture you are looking at before you act on it.">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Axis Observations">
+<meta property="og:url" content="https://axis-lead.com/observations/a-picture-of-what/">
+<meta property="og:title" content="A Picture of What?">
+<meta property="og:description" content="A 360 has no way of knowing whether it caught a leader at their best or in the middle of a rough stretch. Held against a baseline, the same data says something different: not change, but return.">
+<meta property="og:image" content="https://axis-lead.com/observations/images/a-picture-of-what.png">
+<meta property="og:image:alt" content="Two portraits of the same leader side by side: BASELINE, natural state, standing in quiet light by a window; and DISTORTION, under pressure, the same figure seen through glass in a busy office.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Picture of What?">
+<meta name="twitter:description" content="A 360 has no way of knowing whether it caught a leader at their best or in the middle of a rough stretch. Held against a baseline, the same data says something different: not change, but return.">
+<meta name="twitter:image" content="https://axis-lead.com/observations/images/a-picture-of-what.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown-foundation: #342a1f; --cream: #f5f0e8; --cream-light: #faf7f2;
+  --beige: #e8dfd2; --tan: #c4ad8f; --tan-dark: #a89070; --brown: #6b5a42;
+  --brown-dark: #4a3d2e; --brown-deepest: #3a2f22; --gold: #c9a84c;
+  --gold-light: #d4b968; --text-primary: #3a2f22; --text-secondary: #6b5a42;
+  --text-light: #a89070; --page-bg: var(--cream);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 68px; }
+body {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-primary);
+  background: var(--page-bg); -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; position: relative; line-height: 1.75;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(196,173,143,0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* ---- NAV ---- */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100; background: var(--page-bg);
+  border-bottom: 1.5px solid var(--beige); transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text-primary); }
+.logo-mark { width: 26px; height: 26px; opacity: 0.9; }
+.logo-text { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a.active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 1.5px; background: var(--gold);
+}
+
+/* ---- ARTICLE ---- */
+.article { max-width: 700px; margin: 0 auto; padding: 9rem 2.5rem 2rem; }
+.post-category {
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--tan-dark);
+  margin-bottom: 1.25rem;
+}
+.post-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.18; color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.post-subtitle {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;
+  font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem;
+}
+.post-meta {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+  letter-spacing: 0.02em; padding-bottom: 2.5rem; margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--beige);
+}
+
+/* ---- PREAMBLE ---- */
+.post-preamble {
+  border-left: 2px solid var(--gold); padding: 0.25rem 0 0.25rem 1.5rem;
+  margin: 0 0 3rem;
+}
+.post-preamble p {
+  font-size: 0.98rem; line-height: 1.75; color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.post-preamble p:last-child { margin-bottom: 0; }
+
+/* ---- BODY PROSE ---- */
+.article-body p {
+  font-size: 1.05rem; line-height: 1.8; color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.article-body h2 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.5rem, 2.75vw, 1.9rem); line-height: 1.25; color: var(--text-primary);
+  margin: 3.25rem 0 1.25rem;
+}
+.article-body strong { font-weight: 700; color: var(--brown-dark); }
+.article-body em { font-style: italic; }
+.article-body a {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px solid var(--gold); transition: color 0.2s, border-color 0.2s;
+}
+.article-body a:hover { color: var(--brown-deepest); border-bottom-color: var(--brown-deepest); }
+.article-body .ps-divider { height: 1px; background: var(--beige); border: none; margin: 3rem 0 2.5rem; }
+
+/* ---- FIGURE ---- */
+figure { margin: 3rem 0; }
+figure img {
+  width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
+}
+figcaption {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+  margin-top: 0.9rem; letter-spacing: 0.01em; text-align: center;
+}
+
+/* ---- POST FOOTER ---- */
+.article-footer {
+  max-width: 700px; margin: 5rem auto 0; padding: 2.5rem 2.5rem 0;
+  border-top: 1px solid var(--beige);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+}
+.article-footer a {
+  color: var(--text-secondary); text-decoration: none;
+  border-bottom: 1px solid var(--tan); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.article-footer a:hover { color: var(--brown-deepest); border-bottom-color: var(--gold); }
+
+/* ---- BOTTOM CTA ---- */
+.observation-cta {
+  background: var(--cream); border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige);
+  padding: 4rem 2.5rem; text-align: center; margin-top: 5rem;
+}
+.observation-cta-inner { max-width: 620px; margin: 0 auto; }
+.observation-cta h3 {
+  font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.4rem; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;
+}
+.observation-cta p {
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-secondary);
+  font-size: 1rem; margin-bottom: 1.75rem; line-height: 1.65;
+}
+.observation-cta a.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream-light);
+  background: var(--brown-deepest); text-decoration: none; padding: 0.9rem 2rem;
+  border-radius: 2px; transition: background 0.2s;
+}
+.observation-cta a.btn:hover { background: #1a1614; }
+
+/* ---- SITE FOOTER ---- */
+.site-footer {
+  padding: 3rem 2.5rem; text-align: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+}
+.site-footer a { color: var(--text-secondary); text-decoration: none; }
+.site-footer a:hover { color: var(--brown-deepest); }
+
+@media (max-width: 700px) {
+  .nav-links { gap: 1.25rem; }
+  .article { padding: 7.5rem 1.5rem 2rem; }
+  .article-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .nav-links a { font-size: 0.82rem; }
+  .article-body p { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <g stroke="#c9a84c" stroke-width="3.2" stroke-linecap="round">
+          <line x1="32" y1="6" x2="32" y2="58"/><line x1="6" y1="32" x2="58" y2="32"/>
+          <line x1="18" y1="18" x2="46" y2="46"/><line x1="46" y1="18" x2="18" y2="46"/>
+        </g><circle cx="32" cy="32" r="3.1" fill="#c9a84c"/>
+      </svg>
+      <span class="logo-text">Axis Leadership</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#dimensions">Diagnostic</a></li>
+      <li><a href="/observations" class="active">Observations</a></li>
+      <li><a href="/#about-alex">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="article">
+  <p class="post-category">The Axis Diamond</p>
+  <h1 class="post-title">A Picture of What?</h1>
+  <p class="post-meta">July 25, 2026</p>
+
+  <div class="article-body">
+    <p>A 360 is one of the most trusted instruments in leadership development. The name means the full circle: your manager looks down, your direct reports look up, your peers look sideways, and sometimes you rate yourself in the middle. I</p>
+
+    <p>It is trusted for good reason: perception is real data, and leaders live inside other people&rsquo;s experience of them, and blind spots are genuinely revealed this way.</p>
+
+    <p>When you look at how it actually works, a 360 is a photograph taken by everyone you work with, all at once. But a photograph of what, exactly &mdash; the leader, or the year they&rsquo;re having?</p>
+
+    <p>A 360 has no way of knowing whether it caught a leader at their best or in the middle of a rough stretch. It averages everyone&rsquo;s perception of the current version of a person &mdash; this quarter&rsquo;s version, this reorg&rsquo;s version &mdash; and hands that back as the person.</p>
+
+    <p>Then a &ldquo;leadership development plan&rdquo; is put in place to remediate. I once wrote about an engineering VP whose 360 feedback said to be more inspiring &mdash; a steady, precise leader whose consistency read as absence to people expecting a show. And I assessed a leader whose 360 cycle happened to land the year his company was acquired; the report said disengaged, and the recommended fix was re-engagement activities &mdash; for what was actually a loss of belief in where the company was headed.</p>
+
+    <figure>
+      <img src="/observations/images/a-picture-of-what.png" alt="Two portraits of the same leader side by side. On the left, labeled Baseline, natural state: he stands in quiet light beside a window in a calm room. On the right, labeled Distortion, under pressure: the same man seen through office glass, his figure overlaid with reflections of a busy open-plan floor.">
+    </figure>
+
+    <p>The same data becomes far more useful the moment you can hold it against a baseline: Is this their leadership in its natural state, or under distortion?</p>
+
+    <p>One diagnosis says change. The other says return.</p>
+
+    <p>Its worth knowing what picture you are looking at before you act on it</p>
+  </div>
+</article>
+
+<div class="article-footer">
+  <a href="/observations">&larr; All Observations</a>
+  <a href="mailto:alex@axis-lead.com">Talk to Alex &rarr;</a>
+</div>
+
+<div class="observation-cta">
+  <div class="observation-cta-inner">
+    <h3>Leadership has a shape. The Axis Diamond reveals yours.</h3>
+    <p>If you want to see what a diagnostic built this way would surface about your own leadership, start a conversation.</p>
+    <a class="btn" href="mailto:alex@axis-lead.com">Talk to Alex</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Axis Leadership &middot; <a href="mailto:alex@axis-lead.com">alex@axis-lead.com</a></p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>
