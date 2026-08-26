@@ -1486,6 +1486,21 @@ small:has-text("sessions") {
   border-bottom-color: var(--brown);
 }
 </style>
+<style>
+/* ---- FOOTER WRAP (small screens) ---- */
+@media (max-width: 820px) {
+  footer .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+  footer .footer-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.35rem;
+    max-width: 100%;
+  }
+  footer .footer-right a { white-space: nowrap; }
+}
+</style>
 </head>
 <body>
 <!-- ======== NAVIGATION ======== -->
