@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="On leadership, coherence, and who you are when you lead. Real stories, working frameworks, and provocations from the Axis practice." />
 <meta name="twitter:image" content="https://axis-lead.com/og-observations.png" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGcgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48bGluZSB4MT0iMzIiIHkxPSI2IiB4Mj0iMzIiIHkyPSI1OCIvPjxsaW5lIHgxPSI2IiB5MT0iMzIiIHgyPSI1OCIgeTI9IjMyIi8+PGxpbmUgeDE9IjE4IiB5MT0iMTgiIHgyPSI0NiIgeTI9IjQ2Ii8+PGxpbmUgeDE9IjQ2IiB5MT0iMTgiIHgyPSIxOCIgeTI9IjQ2Ii8+PC9nPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMuMSIgZmlsbD0iI2M5YTg0YyIvPjwvc3ZnPg==" />
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
 <style>
 :root {
   --brown-foundation:#342a1f;--cream:#f5f0e8;--cream-light:#faf7f2;--beige:#e8dfd2;
@@ -28,7 +28,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; font-size:16px; scroll-padding-top:68px; }
 body {
-  font-family:'Libre Baskerville',Georgia,serif; color:var(--text-primary);
+  font-family:'Newsreader',Georgia,serif; color:var(--text-primary);
   background:var(--page-bg); -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;
 }
 body::before {
@@ -66,12 +66,12 @@ nav.scrolled { box-shadow:0 2px 20px rgba(58,47,34,0.06); }
   letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.1rem;
 }
 .page-title {
-  font-family:'Libre Baskerville',Georgia,serif; font-weight:700;
+  font-family:'Newsreader',Georgia,serif; font-weight:700;
   font-size:clamp(2rem,3.5vw,2.75rem); line-height:1.2; letter-spacing:-0.015em;
   color:var(--text-primary); margin-bottom:1rem; max-width:880px;
 }
 .page-lede {
-  font-family:'Libre Baskerville',Georgia,serif; font-style:italic; font-weight:400;
+  font-family:'Newsreader',Georgia,serif; font-style:italic; font-weight:400;
   font-size:clamp(1.05rem,1.4vw,1.15rem); line-height:1.5; color:var(--text-secondary); max-width:640px;
 }
 .filter-tabs {
@@ -110,13 +110,13 @@ nav.scrolled { box-shadow:0 2px 20px rgba(58,47,34,0.06); }
   letter-spacing:0.15em; text-transform:uppercase; color:var(--text-light); margin-bottom:0.6rem;
 }
 .entry-title {
-  font-family:'Libre Baskerville',Georgia,serif; font-weight:700;
+  font-family:'Newsreader',Georgia,serif; font-weight:700;
   font-size:clamp(1.3rem,2vw,1.6rem); line-height:1.25; letter-spacing:-0.01em;
   color:var(--text-primary); margin-bottom:0.6rem; transition:color 0.2s;
 }
 .entry-title::after { content:' \2192'; color:var(--tan); font-weight:400; transition:color 0.2s; }
 .entry-dek {
-  font-family:'Libre Baskerville',Georgia,serif; font-size:0.93rem; line-height:1.65;
+  font-family:'Newsreader',Georgia,serif; font-size:0.93rem; line-height:1.65;
   color:var(--text-secondary); max-width:680px;
 }
 .site-footer {
@@ -136,6 +136,15 @@ nav.scrolled { box-shadow:0 2px 20px rgba(58,47,34,0.06); }
   .entry-thumb.placeholder svg { width:24px; height:24px; }
 }
 @media (max-width:600px) { .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; } .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%; } .nav-links a { font-size: 0.78rem; } }
+</style>
+<style>
+/* Type and text-colour pass, Nov 2026: Newsreader replaces Libre Baskerville; small gold and tan text darkened to pass 4.5:1 contrast. Palette unchanged. */
+:root { --gold-text: #816927; --label-text: #786349; }
+/* Newsreader has a smaller x-height than Libre Baskerville; this keeps text at its previous reading size */
+body { font-size-adjust: 0.498; }
+.page-title, .entry-title { font-weight: 600; }
+.page-kicker { color: var(--gold-text); }
+.entry-date, .site-footer { color: var(--label-text); }
 </style>
 </head>
 <body>

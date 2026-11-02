@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://axis-lead.com/observations/images/the-machine-undercounts-you.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --brown-foundation: #342a1f; --cream: #f5f0e8; --cream-light: #faf7f2;
@@ -32,7 +32,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 68px; }
 body {
-  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-primary);
+  font-family: 'Newsreader', Georgia, serif; color: var(--text-primary);
   background: var(--page-bg); -webkit-font-smoothing: antialiased;
   overflow-x: hidden; position: relative; line-height: 1.75;
 }
@@ -77,12 +77,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
   margin-bottom: 1.25rem;
 }
 .post-title {
-  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-family: 'Newsreader', Georgia, serif; font-weight: 700;
   font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.18; color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 .post-subtitle {
-  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;
+  font-family: 'Newsreader', Georgia, serif; font-weight: 400;
   font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem;
 }
 .post-meta {
@@ -108,7 +108,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
   margin-bottom: 1.5rem;
 }
 .article-body h2 {
-  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+  font-family: 'Newsreader', Georgia, serif; font-weight: 700;
   font-size: clamp(1.5rem, 2.75vw, 1.9rem); line-height: 1.25; color: var(--text-primary);
   margin: 3.25rem 0 1.25rem;
 }
@@ -152,11 +152,11 @@ figcaption {
 }
 .observation-cta-inner { max-width: 620px; margin: 0 auto; }
 .observation-cta h3 {
-  font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.4rem; font-weight: 400;
+  font-family: 'Newsreader', Georgia, serif; font-size: 1.4rem; font-weight: 400;
   color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;
 }
 .observation-cta p {
-  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text-secondary);
+  font-family: 'Newsreader', Georgia, serif; color: var(--text-secondary);
   font-size: 1rem; margin-bottom: 1.75rem; line-height: 1.65;
 }
 .observation-cta a.btn {
@@ -184,6 +184,14 @@ figcaption {
   .nav-links a { font-size: 0.82rem; }
   .article-body p { font-size: 1rem; }
 }
+</style>
+<style>
+/* Type and text-colour pass, Nov 2026: Newsreader replaces Libre Baskerville; small gold and tan text darkened to pass 4.5:1 contrast. Palette unchanged. */
+:root { --gold-text: #816927; --label-text: #786349; }
+/* Newsreader has a smaller x-height than Libre Baskerville; this keeps text at its previous reading size */
+body { font-size-adjust: 0.498; }
+.post-title, .article-body h2 { font-weight: 600; }
+.post-category, .post-meta, figcaption, .site-footer { color: var(--label-text); }
 </style>
 </head>
 <body>
