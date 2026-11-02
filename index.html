@@ -323,7 +323,7 @@ section.about-alex { padding-top: 4.5rem; }
 }
 .axis-svg {
   width: 100%;
-  max-width: 440px;
+  max-width: 471px; /* 440 x 428/400: same scale after widening the viewBox so side labels are not clipped */
   height: auto;
 }
 
@@ -1585,7 +1585,7 @@ body { font-size-adjust: 0.498; }
 <!-- The Leadership Axis diagram -->
 <div class="axis-diagram-container">
 <p class="axis-title">The Leadership Axis</p>
-<svg class="axis-svg" fill="none" viewbox="0 0 400 400">
+<svg class="axis-svg" fill="none" viewBox="-14 0 428 400">
 <!-- Subtle background texture -->
 <defs>
 <radialgradient cx="50%" cy="50%" id="centerGlow" r="50%">
