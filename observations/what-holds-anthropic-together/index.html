@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Really Holds Anthropic Together? — Axis Observations</title>
+<meta name="description" content="Anthropic&rsquo;s seven co-founders split ownership evenly and tied control to staying in. A charter can check whether someone is still there, but not whether they still believe in what brought them together.">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Axis Observations">
+<meta property="og:url" content="https://axis-lead.com/observations/what-holds-anthropic-together/">
+<meta property="og:title" content="What Really Holds Anthropic Together?">
+<meta property="og:description" content="A charter can check whether a founder is still there and still holds their shares. It can&rsquo;t check whether they still believe in what brought them together.">
+<meta property="og:image" content="https://axis-lead.com/observations/images/what-holds-anthropic-together.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="922">
+<meta property="og:image:alt" content="Seven black-and-white portraits set in blue panels and linked by gold lines, under the title &ldquo;What Really Holds Anthropic Together?&rdquo; and the words Axis Leadership.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Really Holds Anthropic Together?">
+<meta name="twitter:description" content="A charter can check whether a founder is still there and still holds their shares. It can&rsquo;t check whether they still believe in what brought them together.">
+<meta name="twitter:image" content="https://axis-lead.com/observations/images/what-holds-anthropic-together.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown-foundation: #342a1f; --cream: #f5f0e8; --cream-light: #faf7f2;
+  --beige: #e8dfd2; --tan: #c4ad8f; --tan-dark: #a89070; --brown: #6b5a42;
+  --brown-dark: #4a3d2e; --brown-deepest: #3a2f22; --gold: #c9a84c;
+  --gold-light: #d4b968; --text-primary: #3a2f22; --text-secondary: #6b5a42;
+  --text-light: #a89070; --page-bg: var(--cream);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 68px; }
+body {
+  font-family: 'Newsreader', Georgia, serif; color: var(--text-primary);
+  background: var(--page-bg); -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; position: relative; line-height: 1.75;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(196,173,143,0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* ---- NAV ---- */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100; background: var(--page-bg);
+  border-bottom: 1.5px solid var(--beige); transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(58,47,34,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text-primary); }
+.logo-mark { width: 28px; height: 28px; opacity: 0.85; }
+.logo-text { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a.active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 1.5px; background: var(--gold);
+}
+
+/* ---- ARTICLE ---- */
+.article { max-width: 700px; margin: 0 auto; padding: 9rem 2.5rem 2rem; }
+.post-category {
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--tan-dark);
+  margin-bottom: 1.25rem;
+}
+.post-title {
+  font-family: 'Newsreader', Georgia, serif; font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.18; color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.post-subtitle {
+  font-family: 'Newsreader', Georgia, serif; font-weight: 400;
+  font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem;
+}
+.post-meta {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+  letter-spacing: 0.02em; padding-bottom: 2.5rem; margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--beige);
+}
+
+/* ---- PREAMBLE ---- */
+.post-preamble {
+  border-left: 2px solid var(--gold); padding: 0.25rem 0 0.25rem 1.5rem;
+  margin: 0 0 3rem;
+}
+.post-preamble p {
+  font-size: 0.98rem; line-height: 1.75; color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.post-preamble p:last-child { margin-bottom: 0; }
+
+/* ---- BODY PROSE ---- */
+.article-body p {
+  font-size: 1.05rem; line-height: 1.8; color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.article-body h2 {
+  font-family: 'Newsreader', Georgia, serif; font-weight: 700;
+  font-size: clamp(1.5rem, 2.75vw, 1.9rem); line-height: 1.25; color: var(--text-primary);
+  margin: 3.25rem 0 1.25rem;
+}
+.article-body strong { font-weight: 700; color: var(--brown-dark); }
+.article-body em { font-style: italic; }
+.article-body a {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px solid var(--gold); transition: color 0.2s, border-color 0.2s;
+}
+.article-body a:hover { color: var(--brown-deepest); border-bottom-color: var(--brown-deepest); }
+.article-body .ps-divider { height: 1px; background: var(--beige); border: none; margin: 3rem 0 2.5rem; }
+
+/* ---- FIGURE ---- */
+figure { margin: 3rem 0; }
+figure img {
+  width: 100%; height: auto; display: block; border-radius: 2px; border: 1px solid var(--beige);
+}
+figcaption {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+  margin-top: 0.9rem; letter-spacing: 0.01em; text-align: center;
+}
+
+/* ---- POST FOOTER ---- */
+.article-footer {
+  max-width: 700px; margin: 5rem auto 0; padding: 2.5rem 2.5rem 0;
+  border-top: 1px solid var(--beige);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+}
+.article-footer a {
+  color: var(--text-secondary); text-decoration: none;
+  border-bottom: 1px solid var(--tan); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.article-footer a:hover { color: var(--brown-deepest); border-bottom-color: var(--gold); }
+
+/* ---- BOTTOM CTA ---- */
+.observation-cta {
+  background: var(--cream); border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige);
+  padding: 4rem 2.5rem; text-align: center; margin-top: 5rem;
+}
+.observation-cta-inner { max-width: 620px; margin: 0 auto; }
+.observation-cta h3 {
+  font-family: 'Newsreader', Georgia, serif; font-size: 1.4rem; font-weight: 400;
+  color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;
+}
+.observation-cta p {
+  font-family: 'Newsreader', Georgia, serif; color: var(--text-secondary);
+  font-size: 1rem; margin-bottom: 1.75rem; line-height: 1.65;
+}
+.observation-cta a.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream-light);
+  background: var(--brown-deepest); text-decoration: none; padding: 0.9rem 2rem;
+  border-radius: 2px; transition: background 0.2s;
+}
+.observation-cta a.btn:hover { background: #1a1614; }
+
+/* ---- SITE FOOTER ---- */
+.site-footer {
+  padding: 3rem 2.5rem; text-align: center;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text-light);
+}
+.site-footer a { color: var(--text-secondary); text-decoration: none; }
+.site-footer a:hover { color: var(--brown-deepest); }
+
+@media (max-width: 700px) {
+  .nav-links { gap: 1.25rem; }
+  .article { padding: 7.5rem 1.5rem 2rem; }
+  .article-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .nav-links a { font-size: 0.82rem; }
+  .article-body p { font-size: 1rem; }
+}
+</style>
+<style>
+/* Type and text-colour pass, Nov 2026: Newsreader replaces Libre Baskerville; small gold and tan text darkened to pass 4.5:1 contrast. Palette unchanged. */
+:root { --gold-text: #816927; --label-text: #786349; }
+/* Newsreader has a smaller x-height than Libre Baskerville; this keeps text at its previous reading size */
+body { font-size-adjust: 0.498; }
+.post-title, .article-body h2 { font-weight: 600; }
+.post-category, .post-meta, figcaption, .site-footer { color: var(--label-text); }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <svg class="logo-mark" fill="none" viewBox="0 0 40 40">
+<line stroke="currentColor" stroke-width="0.8" x1="20" x2="20" y1="2" y2="38"></line>
+<line stroke="currentColor" stroke-width="0.8" x1="2" x2="38" y1="20" y2="20"></line>
+<line stroke="currentColor" stroke-width="0.4" x1="8" x2="32" y1="8" y2="32"></line>
+<line stroke="currentColor" stroke-width="0.4" x1="32" x2="8" y1="8" y2="32"></line>
+<circle cx="20" cy="20" fill="currentColor" opacity="0.6" r="2.5"></circle>
+<circle cx="20" cy="20" fill="currentColor" r="1"></circle>
+</svg>
+      <span class="logo-text">Axis Leadership</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#dimensions">Diagnostic</a></li>
+      <li><a href="/observations" class="active">Observations</a></li>
+      <li><a href="/#about-alex">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="article">
+  <p class="post-category">The Business Environment</p>
+  <h1 class="post-title">What Really Holds Anthropic Together?</h1>
+  <p class="post-meta">November 23, 2026</p>
+
+  <div class="article-body">
+    <p>Anthropic went public last week. Its seven co-founders hold nearly identical stakes, about 240 million shares each, and each sold exactly the same number of shares in the offering. Together they keep majority voting control through a single entity, and any of them can lose their place in it for resigning, selling too much, or cause.</p>
+
+    <p>The equal split tells you how the seven chose to divide ownership. It doesn&rsquo;t tell you much about how each of them leads. The group includes four researchers, a former journalist, a policymaker and an engineer, and I&rsquo;d be surprised if people with backgrounds that different led from the same place.</p>
+
+    <figure>
+      <img src="/observations/images/what-holds-anthropic-together.png" width="1400" height="922" alt="Seven black-and-white portraits set in blue panels and linked by gold lines, under the title &ldquo;What Really Holds Anthropic Together?&rdquo; and the words Axis Leadership.">
+    </figure>
+
+    <p>I&rsquo;ve noticed that leaders who build strong partnerships often look for people unlike themselves on purpose. A founder who is best at designing how things work goes looking for a partner with good business sense. Someone who loves getting things started looks for a person who will keep them running. They&rsquo;re honest that the differences cost time and friction, and that the partnership gives them energy they wouldn&rsquo;t have alone.</p>
+
+    <p>When those partnerships fail, the differences often aren&rsquo;t the cause. Sometimes the people were never committed to the same thing. One leader told me he&rsquo;d joined a company out of curiosity rather than belief in what it was doing, and years after he left, the effect still showed in his assessment. Another works closely and directly with people who share his purpose; everyone else gets the work, but not much of him.</p>
+
+    <p>The framework we use describes leadership across four dimensions. Three of them, Strategy, Systems and Humanity, make up a leader&rsquo;s shape, and those can differ a lot across a team. The fourth, Authenticity, is about where a person&rsquo;s commitment actually comes from and why they&rsquo;re doing the work. Partners don&rsquo;t need the same motives, but each of them has to believe in what they&rsquo;re building for reasons of their own.</p>
+
+    <p>Whatever each founder&rsquo;s personal reasons, they disagreed with OpenAI about how AI should be built, and agreed with each other enough to leave and start over.</p>
+
+    <p>Their charter ties control to staying in: resign, or sell too much, and you lose your vote. A charter can check whether someone is still there and still holds their shares. It can&rsquo;t check whether they still believe in what brought them together.</p>
+
+    <p>It&rsquo;s also not clear they would notice if that changed. In the assessments, a shift like that is rarely obvious while it&rsquo;s happening. Leaders tend to see it later, if they see it at all.</p>
+
+    <p>They&rsquo;ve built an unusual structure to protect the company they meant to build. I don&rsquo;t think any structure can tell them whether they&rsquo;re still building it for the same reasons.</p>
+  </div>
+</article>
+
+<div class="article-footer">
+  <a href="/observations">&larr; All Observations</a>
+  <a href="mailto:alex@axis-lead.com">Talk to Alex &rarr;</a>
+</div>
+
+<div class="observation-cta">
+  <div class="observation-cta-inner">
+    <h3>Leadership has a shape. The Axis Diamond reveals yours.</h3>
+    <p>If you want to see what a diagnostic built this way would surface about your own leadership, start a conversation.</p>
+    <a class="btn" href="mailto:alex@axis-lead.com">Talk to Alex</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Axis Leadership &middot; <a href="mailto:alex@axis-lead.com">alex@axis-lead.com</a></p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>
